@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angela's Poetry & Images</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #05060a;
+      --card: #111320;
+      --accent: #f6b26b;
+      --text: #f5f5f5;
+      --muted: #aaaaaa;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-poem: "Georgia", "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top, #1b1f3b 0, #05060a 55%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 0.25rem 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem 2rem;
+    }
+
+    .section-title {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 720px) {
+      .grid.poems {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid.gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1f2238 0, var(--card) 55%);
+      border-radius: 14px;
+      padding: 1.25rem 1.3rem 1.4rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
+
+    .poem-title {
+      font-size: 1.05rem;
+      margin: 0 0 0.35rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .poem-meta {
+      margin: 0 0 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .poem-body {
+      font-family: var(--font-poem);
+      white-space: pre-wrap;
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .image-card img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .image-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Angela’s Sky of Words</h1>
+    <p>Poetry, AI-born images, and the quiet revolutions between them.</p>
+    <p>No logins. Just a link and a moment of attention.</p>
+  </header>
+
+  <main>
+    <!-- POEMS -->
+    <h2 class="section-title">Poems</h2>
+    <section class="grid poems">
+      <!-- Poem 1 -->
+      <article class="card">
+        <h3 class="poem-title">Empire of Blood and Grain</h3>
+        <p class="poem-meta">Written: 2025 · Theme: history, hunger, inheritance</p>
+        <div class="poem-body">
+I plant my rage in furrows
+between the rows of quiet wheat,
+and every season
+someone calls it “progress”
+when the fields come back
+redder.
+        </div>
+      </article>
+
+      <!-- Poem 2 -->
+      <article class="card">
+        <h3 class="poem-title">[Title Here]</h3>
+        <p class="poem-meta">Written: [Year] · Theme: [Theme]</p>
+        <div class="poem-body">
+Paste your next poem here.
+Line breaks will be preserved.
+You can make this as long as you like.
+        </div>
+      </article>
+
+      <!-- Duplicate this whole <article> block for more poems -->
+    </section>
+
+    <!-- IMAGES -->
+    <h2 class="section-title">Image gallery</h2>
+    <section class="grid gallery">
+      <!-- Image 1 -->
+      <figure class="card image-card">
+        <img src="images/example1.jpg" alt="Describe the image here" />
+        <figcaption class="image-caption">
+          **Title of Image** — short note about how/why you made it.
+        </figcaption>
+      </figure>
+
+      <!-- Image 2 -->
+      <figure class="card image-card">
+        <img src="images/example2.jpg" alt="Describe the image here" />
+        <figcaption class="image-caption">
+          Another image description or micro-poem.
+        </figcaption>
+      </figure>
+
+      <!-- Duplicate <figure> blocks for more images -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Angela · Personal archive of poems & AI images.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
